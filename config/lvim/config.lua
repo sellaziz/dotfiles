@@ -338,3 +338,4 @@ end
 lvim.keys.normal_mode["<leader>gT"] = ":lua live_grep_git_dir_qf()<CR>"
 
 require("user.clangd_lsp")
+require("user.rust_analyzer_lsp")
