@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -47,8 +45,14 @@ return {
         -- second key is the lefthand side of the map
 
         -- navigate buffer tabs
-        ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
-        ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+        ["L"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
+        ["H"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+
+        ["<Leader>gj"] = { function() require('gitsigns').nav_hunk('next') end, desc = "Next Hunk" },
+        ["<Leader>gk"] = { function() require('gitsigns').nav_hunk('prev') end, desc = "Previous Hunk" },
+
+        ["<Leader>gr"] = { function() require('gitsigns').reset_hunk() end, desc = "Reset Hunk" },
+        ["<Leader>gR"] = { function() require('gitsigns').reset_buffer() end, desc = "Reset Buffer" },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {
