@@ -6,6 +6,7 @@
 
 - link:
     ~/.tmux.conf: tmux.conf
+    ~/.zshrc: zshrc
     ~/.config/lvim:
       create: true
       path: config/lvim
