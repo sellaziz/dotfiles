@@ -102,6 +102,8 @@ lvim.builtin.treesitter.ensure_installed = {
   "python",
   "rust",
   "yaml",
+  "latex",
+  "javascript",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -138,6 +140,13 @@ lvim.builtin.treesitter.highlight.enable = true
 --   return server ~= "emmet_ls"
 -- end, lvim.lsp.automatic_configuration.skipped_servers)
 
+local opts = {} -- check the lspconfig documentation for a list of all possible options
+require("lvim.lsp.manager").setup("texlab", opts)
+local opts = {} -- check the lspconfig documentation for a list of all possible options
+require("lvim.lsp.manager").setup("ltex", opts)
+local opts = {} -- check the lspconfig documentation for a list of all possible options
+require("lvim.lsp.manager").setup("tsserver", opts)
+require("lvim.lsp.manager").setup("rust_analyzer", opts)
 -- -- you can set a custom on_attach function that will be used for all the language servers
 -- -- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
 lvim.lsp.on_attach_callback = function(client, bufnr)
@@ -339,3 +348,5 @@ lvim.keys.normal_mode["<leader>gT"] = ":lua live_grep_git_dir_qf()<CR>"
 
 require("user.clangd_lsp")
 require("user.rust_analyzer_lsp")
+require("user.go_lsp")
+require("user.pyright")
