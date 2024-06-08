@@ -25,6 +25,9 @@ return {
     -- vim options can be configured here
     options = {
       opt = { -- vim.opt.<key>
+        expandtab = true, -- sets vim.opt.expandtab
+        tabstop = 8, -- sets vim.opt.tabstop
+        shiftwidth = 8, -- sets vim.opt.shiftwidth
         relativenumber = true, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
@@ -36,6 +39,14 @@ return {
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
       },
+    },
+    -- Rooter configuration (for rooter)
+    rooter = {
+      detector = {
+        "lsp",
+        {"root_pattern", ".git"},
+      },
+      autochdir = true,
     },
     -- Mappings can be configured through AstroCore as well.
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
