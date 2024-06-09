@@ -38,6 +38,9 @@ return {
         -- configure global vim variables (vim.g)
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
+        vimtex_view_method = 'general',
+        vimtex_compiler_method = 'latexmk',
+        maplocalleader = ",",
       },
     },
     -- Rooter configuration (for rooter)
