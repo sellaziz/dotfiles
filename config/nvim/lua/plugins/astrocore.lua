@@ -65,6 +65,8 @@ return {
         ["<Leader>gj"] = { function() require('gitsigns').nav_hunk('next') end, desc = "Next Hunk" },
         ["<Leader>gk"] = { function() require('gitsigns').nav_hunk('prev') end, desc = "Previous Hunk" },
 
+        ["gr"] = { function() require('telescope.builtin').lsp_references() end, desc = "LSP References" },
+        ["gl"] = { function() require('gitsigns').blame_line() end, desc = "Blame Line" },
         ["<Leader>gr"] = { function() require('gitsigns').reset_hunk() end, desc = "Reset Hunk" },
         ["<Leader>gR"] = { function() require('gitsigns').reset_buffer() end, desc = "Reset Buffer" },
 
